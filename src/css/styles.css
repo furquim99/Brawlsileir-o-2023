@@ -1,0 +1,163 @@
+body{
+    font-family: 'ssf4', Courier, monospace;
+    background: var(--cor-secundaria);
+}
+
+body::before{
+    content: '';
+    background-image: url("../img/Fundo-5.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;    
+}
+
+main{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+h1 ,h2, p, ul, li{
+    color: white;
+}
+
+.cabecalho{
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+}
+.cabecalho .titulo{
+    color: var(--cor-titulo-fraco);
+    text-transform: uppercase;
+    font-size: 52px;
+    line-height: 102px;
+    -webkit-text-stroke: 2px var(--cor-titulo-forte);
+}
+
+.selec-personagens{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.selec-personagens .img-grande{
+    text-align: center;
+    width: 30%;
+    height: 70vh;
+    position: relative;
+}
+
+.selec-personagens .img-grande img{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, -50%);
+}
+
+.selec-personagens .img-grande .nome::before{
+    content: '';
+    height: 30px;
+    width: 100%;
+    position: absolute;
+    /* margin-top: 950px; */
+    bottom: 15px;
+    left: 0;
+}
+
+.selec-personagens .img-grande .nome h2{
+    color: var(--cor-padrao);
+    font-family: 'command', sans-serif;
+    position: relative;
+    bottom: 0;
+    margin-top: -70px;
+    width: 100%;
+    font-size: 27px;
+}
+
+.selec-personagens .img-grande.personagem-jogador-1 .nome::before{
+    background-color: var(--cor-azul-principal);
+}
+
+.selec-personagens .img-grande.personagem-jogador-2 .nome::before{
+    background-color: var(--cor-vermelha-principal);
+}
+
+.selec-personagens .lista{
+    display: flex;
+    flex-wrap: wrap;
+    width: 600px;
+    justify-content: center;
+    gap: 12px;
+    list-style: none;
+}
+
+.selec-personagens .lista .mascote{
+    border: 2px solid var(--cor-padrao);
+    background-color: var(--cor-padrao);
+    width: 30%;
+    height: 50px;
+    cursor: pointer;
+    z-index: 2;
+    border-radius: 5px;
+    position: relative;
+    transition: 0.15s ease-in-out;
+}
+
+.selec-personagens .lista .mascote img{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.selec-personagens .lista .mascote.selecionado{
+    border: 2px solid var(--cor-azul-media);
+    animation: c-glowing-blue .3s ease-in-out infinite;
+    animation-direction: alternate
+}
+
+.selec-personagens .lista .mascote:hover{
+    animation: c-glowing-blue .3s ease-in-out infinite;
+    animation-direction: alternate;
+    transform: scale(1.07);
+    z-index: 2;
+}
+
+.selec-personagens .lista .mascote.jogador-2-selecionado{
+    border: 2px solid var(--cor-vermelha-fraca);
+    animation: c-glowing-red .3s ease-in-out infinite;
+    animation-direction: alternate;
+}
+
+.selec-personagens .lista .mascote.jogador-2-selecionado:hover{
+    animation: c-glowing-red .3s ease-in-out infinite;
+    animation-direction: alternate;
+}
+
+.selec-personagens .lista .mascote .tag{
+    display: flex;
+    font-family: 'Times New Roman', Times, serif;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    color: var(--cor-azul-media);
+    transition: opacity .3 ease-in-out;
+    animation: text-glowing-blue .3s ease-in-out infinite;
+    animation-direction: alternate;
+}
+
+.selec-personagens .lista .mascote.selecionado .tag{
+    display: block;
+    animation: text-glowing-blue .3s ease-in-out infinite;
+    animation-direction: alternate;
+}
+
+.selec-personagens .lista .mascote.jogador-2-selecionado .tag{
+    display: block;
+    animation: text-glowing-red .3s ease-in-out infinite;
+    animation-direction: alternate;
+}
